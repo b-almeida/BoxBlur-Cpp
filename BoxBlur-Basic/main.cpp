@@ -6,8 +6,12 @@ using namespace lodepng;
 
 int main()
 {
+    // Adjustable input file name
     string filename = "apple.png";
 
+    
+    
+    
     vector<unsigned char> image; //the raw pixels in a list e.g. {R, G, B, A, R, G, B, A, R, ...}
     unsigned width, height;
 
@@ -43,7 +47,6 @@ int main()
 
 
     vector<vector <vector <unsigned char> > > blurred;
-    //TODO: Your code goes here.
 
 
     // resize blurred 3-d vector to height x width x 4(colours)
@@ -230,8 +233,13 @@ int main()
         }
     }
 
-    //
+    
+    
+    
+    // Output to file
+    // (adjustable output file name)
     encode("blurred.png", flat, width, height);
 
+    
     return 0;
 }

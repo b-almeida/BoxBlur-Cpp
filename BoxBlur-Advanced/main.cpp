@@ -6,8 +6,12 @@ using namespace lodepng;
 
 int main()
 {
+    // Adjustable input file name
     string filename = "apple.png";
 
+    
+    
+    
     vector<unsigned char> image; //the raw pixels in a list e.g. {R, G, B, A, R, G, B, A, R, ...}
     unsigned width, height;
 
@@ -41,14 +45,16 @@ int main()
 
 
 
+    
+    // Adjustable blur radius (in pixels)
+    const int radius = 5;
 
+
+
+    
     vector<vector <vector <unsigned char> > > blurred;
-    //TODO: Your code goes here.
-
-
-    const int radius = 5;   // blur radius
-
-
+    
+    
     // resize blurred 3-d vector to height x width x 4(colours)
     blurred.resize(height);
     for (int row = 0; row < height; row++)
@@ -296,8 +302,13 @@ int main()
         }
     }
 
-    //
+    
+    
+    
+    // Output to file
+    // (adjustable output file name)
     encode("blurred.png", flat, width, height);
 
+    
     return 0;
 }
